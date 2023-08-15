@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Editor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        #main_border {
+            border: 3px solid black;
+        }
+
+        #bottom_line {
+            border-bottom: 5px solid black;
+            width: 95%;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section class="max-w-screen-xl mx-auto h-[600px] bg-gray-300">
+            <h3 class="text-5xl font-medium text-center pt-3">My Text Editor</h3>
+            <div class="w-4/5 h-4/5 mx-auto mt-3" id="main_border">
+                <div class="h-1/5 mx-auto flex flex-col lg:flex-row" id="bottom_line">
+                    <div class="flex-1 flex items-center">
+                        <button class="btn btn-outline btn-info m-2">B</button>
+                        <button class="btn btn-outline btn-info m-2">I</button>
+                        <button class="btn btn-outline btn-info m-2">U</button>
+                    </div>
+                    <div class="flex-1 flex items-center">
+                        <button class="btn btn-outline btn-info m-2">Left</button>
+                        <button class="btn btn-outline btn-info m-2">Center</button>
+                        <button class="btn btn-outline btn-info m-2">Right</button>
+
+                    </div>
+                    <div class="flex-1 flex items-center">
+                        <input type="number" name="" class="m-2" id="">
+                        <button class="btn btn btn-outline btn-info m-2">aA</button>
+                        <input type="color" name="" class="m-2" id="">
+                    </div>
+                </div>
+                <textarea name="" id="" class="w-full" cols="30" rows="10"></textarea>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
