@@ -25,7 +25,7 @@
 
         #bottom_line {
             border-bottom: 5px solid black;
-            width: 95%;
+          
         }
     </style>
 </head>
@@ -34,29 +34,63 @@
     <main>
         <section class="max-w-screen-xl mx-auto h-[600px] bg-gray-300">
             <h3 class="text-5xl font-medium text-center pt-3">My Text Editor</h3>
-            <div class="w-4/5 h-4/5 mx-auto mt-3" id="main_border">
-                <div class="h-1/5 mx-auto flex flex-col lg:flex-row" id="bottom_line">
+            <div class="w-auto lg:w-4/5 h-4/5 mx-auto mt-3" id="main_border">
+                <div class="h-auto lg:h-1/5 mx-auto flex flex-col lg:flex-row" id="bottom_line">
                     <div class="flex-1 flex items-center">
-                        <button class="btn btn-outline btn-info m-2">B</button>
-                        <button class="btn btn-outline btn-info m-2">I</button>
-                        <button class="btn btn-outline btn-info m-2">U</button>
+                        <button class="btn btn-outline btn-info m-2" id="bold">B</button>
+                        <button class="btn btn-outline btn-info m-2" id="italic">I</button>
+                        <button class="btn btn-outline btn-info m-2" id="underLibe">U</button>
                     </div>
                     <div class="flex-1 flex items-center">
-                        <button class="btn btn-outline btn-info m-2">Left</button>
-                        <button class="btn btn-outline btn-info m-2">Center</button>
-                        <button class="btn btn-outline btn-info m-2">Right</button>
+                        <button class="btn btn-outline btn-info m-2" id="left">Left</button>
+                        <button class="btn btn-outline btn-info m-2" id="center">Center</button>
+                        <button class="btn btn-outline btn-info m-2" id="right">Right</button>
 
                     </div>
                     <div class="flex-1 flex items-center">
-                        <input type="number" name="" class="m-2" id="">
-                        <button class="btn btn btn-outline btn-info m-2">aA</button>
-                        <input type="color" name="" class="m-2" id="">
+                        <input type="number" name="" value="18" class="m-2" id="num" onchange="numChange()">
+                        <button class="btn btn btn-outline btn-info m-2" id="upperLetter">aA</button>
+                        <input type="color" name="" class="m-2" id="color" onchange="f1()">
                     </div>
                 </div>
-                <textarea name="" id="" class="w-full" cols="30" rows="10"></textarea>
+                <textarea name="" id="text" class="w-full" cols="30" rows="10" placeholder="please write something"></textarea>
             </div>
         </section>
     </main>
+    <script>
+       document.getElementById('bold').addEventListener('click',function(){
+        document.getElementById('text').style.fontWeight = 'bold';
+       });
+       document.getElementById('italic').addEventListener('click',function(){
+        document.getElementById('text').style.fontStyle = 'italic';
+       })
+       document.getElementById('underLibe').addEventListener('click',function(){
+        document.getElementById('text').style.textDecoration = 'underline';
+       })
+       document.getElementById('left').addEventListener('click',function(){
+        document.getElementById('text').style.textAlign = 'left';
+       })
+       document.getElementById('center').addEventListener('click',function(){
+        document.getElementById('text').style.textAlign = 'center';
+       })
+       document.getElementById('right').addEventListener('click',function(){
+        document.getElementById('text').style.textAlign = 'right';
+       })
+       function numChange(){
+        let txt = document.getElementById('num').value;
+        document.getElementById('text').style.fontSize = txt+'px';
+       }
+       document.getElementById('upperLetter').addEventListener('click',function(){
+        document.getElementById('text').style.textTransform = 'uppercase'
+       })
+
+       function f1(){
+        let colorCode = document.getElementById('color').value;
+        document.getElementById('text').style.color = colorCode;
+       }
+
+       
+    </script>
 </body>
 
 </html>
